@@ -1,0 +1,85 @@
+! COLORS
+URxvt*foreground: #e5e5e5 
+URxvt*background: #1d1d1d
+URxvt*cursorColor: #FFF9EC
+!Black
+*color0: #121212
+*color8: #2e3436
+!Red
+*color1: #a35b66
+*color9: #ab6b74
+!Green
+*color2: #99ab6f
+*color10: #acb792
+!Yellow
+*color3: #ca9733
+*color11: #ccaa69
+!Blue
+*color4: #495d6e
+*color12: #687987
+!Magenta
+*color5: #825969
+*color13: #977381
+!Cyan
+*color6: #839191
+*color14: #98A4A4
+!White
+*color7: #E0E0E0
+*color15: #e5e5e5
+
+! URXVT SETTINGS
+!
+! Arch Linux requires the following from AUR: 
+! urxvt-perls-git urxvt-vtwheel urxvt-autocomplete-all-the-things-git
+!
+!URxvt.perl-ext-common:      default,tabbed,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
+URxvt.perl-ext-common:      default,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
+URxvt.keysym.Mod4-slash:    perl:aAtt:complete
+URxvt.keysym.Mod4-u:        perl:url-select:select_next
+URxvt.keysym.Mod4-Escape:   perl:keyboard-select:activate
+URxvt.keysym.Mod4-s:        perl:keyboard-select:search
+URxvt.keysym.Mod4-c:        perl:clipboard:copy
+URxvt.keysym.Mod4-v:        perl:clipboard:paste
+URxvt.keysym.Mod4-C-v:      perl:clipboard:paste_escaped
+URxvt.copyCommand:          xsel -ib
+URxvt.pasteCommand:         xsel -ob
+URxvt.urlLauncher:          /usr/bin/firefox -new-tab
+URxvt.matcher.button:       2
+URxvt.scrollBar:            off
+URxvt.depth:                32
+URxvt.keysym.C-Delete:      perl:matcher:last
+URxvt.keysym.M-Delete:      perl:matcher:list
+URxvt.underlineURLs:        true
+URxvt.title:                urxvt
+URxvt.borderColor:          #000000
+URxvt.geometry:             100x30
+URxvt.internalBorder:       0
+URxvt.eXTernalBorder:       0
+URxvt.scrollBar_right:      false
+URxvt.transparent:          true
+URxvt.shading:              30
+URxvt.foreground:           #e6e6e6
+URxvt.background:           #000000
+URxvt*loginShell:           true
+URxvt*termName:             rxvt-unicode-256color
+! Consolas fonts are found in AUR. ttf-microsoft-consolas
+URxvt*font:                 xft:Consolas-14-bold
+URxvt*boldFont:             xft:Consolas-15-bold
+URxvt*intensityStyles:      true
+
+! FONTS
+Xft.autohint:               0
+Xft.lcdfilter:              lcddefault
+Xft.hintstyle:              hintfull
+Xft.hinting:                1
+Xft.antialias:              1
+Xft.rgba:                   rgb
+Xft.dpi:                    96
+
+! xpdf
+
+xpdf*enableFreetype:    yes
+xpdf*antialias:         yes
+xpdf*foreground:        black
+xpdf*background:        white
+xpdf*urlCommand:        /usr/bin/firefox -new-tab %s

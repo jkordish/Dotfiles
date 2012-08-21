@@ -1,0 +1,16 @@
+out_to_x                  no
+out_to_console            yes
+total_run_times           0
+update_interval           1
+cpu_avg_samples           5
+net_avg_samples           2
+no_buffers                yes
+use_spacer                left
+use_spacer                right
+short_units               yes
+pad_percents              1
+text_buffer_size          512
+temperature_unit          celsius
+
+TEXT
+${color blue}${time %I:%M:%S %p}${color} | ${color red}CPU:${color} ${cpu}% | ${color red}Mem:${color} ${memperc}% | ${color cyan}Down:${color} ${downspeed eth0} | ${color cyan}Up:${color} ${upspeed eth0} | ${color yellow}Bat:${color} ${battery_short BAT0} ${battery_time BAT0}

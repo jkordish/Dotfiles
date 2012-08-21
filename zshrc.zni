@@ -1,0 +1,16 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' completions 1
+zstyle ':completion:*' format '%d:'
+zstyle ':completion:*' glob 1
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'r:|[._-/]=** r:|=**'
+zstyle ':completion:*' max-errors 3 numeric
+zstyle ':completion:*' substitute 1
+zstyle :compinstall filename '/home/jkordish/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall

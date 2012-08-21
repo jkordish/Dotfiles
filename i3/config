@@ -1,0 +1,204 @@
+# fonts
+
+# font for window titles. ISO 10646 = Unicode
+font -*-anorexia-medium-*-*-*-11-*-*-*-*-*-iso10646-1
+floating_modifier Mod4
+new_window normal 
+#new_float 1pixel
+
+# colors
+
+#class			             border	   backgr.	text
+client.focused           #121212   #101010  #9e8a8e
+client.focused_inactive  #101010   #191919  #999999
+client.unfocused         #101010   #191919  #999999
+client.urgent            #cd989a   #cd989a  #2e3436
+client.background			   #1d1d1d
+
+# keybinds
+
+
+# start a terminal
+bindsym Mod4+Return exec urxvtc
+# kill focused window
+bindsym Mod4+q kill
+bindsym Mod4+p exec dmenu_run -fn  "-*-anorexia-medium-*-*-*-11-*-*-*-*-*-*-*" -nb "#101010" -nf "#999999" -sb "#191919" -sf "#825969" -b 
+#bindsym Mod4+p exec dmenu_run -fn -*-pixelcarnage-monospace-medium-*-normal-*-14-*-*-*-*-*-*-* -nb "#101010" -nf "#999999" -sb "#191919" -sf "#825969" -b
+
+# change focus
+bindsym Mod4+j focus right
+bindsym Mod4+k focus down
+bindsym Mod4+i focus up
+bindsym Mod4+l focus left
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Shift+l move left
+bindsym Mod4+Shift+k move down
+bindsym Mod4+Shift+i move up
+bindsym Mod4+Shift+j move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
+
+# split in horizontal orientation
+bindsym Mod4+h split h
+# split in vertical orientation
+bindsym Mod4+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod4+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout default
+
+# toggle tiling / floating
+bindsym Mod4+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod4+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod4+a focus parent
+
+# focus the child container
+#bindsym Mod1+d focus child
+
+# switch to workspace
+bindsym Mod4+1 workspace 1: main
+bindsym Mod4+2 workspace 2: web
+bindsym Mod4+3 workspace 3: terms
+bindsym Mod4+4 workspace 4: media
+bindsym Mod4+5 workspace 5: off
+bindsym Mod4+6 workspace 6: vm
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+0 workspace 10
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move workspace 1: main
+bindsym Mod4+Shift+2 move workspace 2: web
+bindsym Mod4+Shift+3 move workspace 3: terms
+bindsym Mod4+Shift+4 move workspace 4: media
+bindsym Mod4+Shift+5 move workspace 5: off
+bindsym Mod4+Shift+6 move workspace 6: vm
+bindsym Mod4+Shift+7 move workspace 7
+bindsym Mod4+Shift+8 move workspace 8
+bindsym Mod4+Shift+9 move workspace 9
+bindsym Mod4+Shift+0 move workspace 10
+
+# reload the configuration file
+bindsym Mod4+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym Mod4+Shift+q exit
+
+# Lock screen with i3lock
+bindsym control+mod1+l exec xautolock -locknow
+
+# ScratchPad
+# Make the currently focused window a scratchpad
+bindsym Mod4+Shift+minus move scratchpad
+#
+# # Show the first scratchpad window
+bindsym Mod4+minus scratchpad show
+#
+# # Show the sup-mail scratchpad window, if any.
+#bindsym mod4+s [title="^Sup ::"] scratchpad show
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+        bindsym l               resize shrink left 10 px or 10 ppt
+        bindsym Shift+l         resize grow   left 10 px or 10 ppt
+
+        bindsym k               resize shrink down 10 px or 10 ppt
+        bindsym Shift+k         resize grow   down 10 px or 10 ppt
+
+        bindsym i               resize shrink up 10 px or 10 ppt
+        bindsym Shift+i         resize grow   up 10 px or 10 ppt
+
+        bindsym j       resize shrink right 10 px or 10 ppt
+        bindsym Shift+j resize grow   right 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink left 10 px or 10 ppt
+        bindsym Shift+Left  resize grow   left 10 px or 10 ppt
+
+        bindsym Down        resize shrink down 10 px or 10 ppt
+        bindsym Shift+Down  resize grow   down 10 px or 10 ppt
+
+        bindsym Up          resize shrink up 10 px or 10 ppt
+        bindsym Shift+Up    resize grow   up 10 px or 10 ppt
+
+        bindsym Right       resize shrink right 10 px or 10 ppt
+        bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod4+r mode "resize"
+
+# Screenshot
+bindsym 0xff61 exec scrot  ~/Imágenes/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png
+
+bar {
+    status_command conky
+    #mode dock
+    position top 
+    #font -*-anorexia-medium-*-*-*-11-*-*-*-*-*-*-*
+    font -*-pixelcarnage monospace-medium-*-normal-*-14-*-*-*-*-*-*-*
+    workspace_buttons yes
+    colors {
+        background #0e0e0e
+        statusline #c0c0c0
+        focused_workspace #c0c0c0 #0e0e0e
+        #active_workspace   #696969 #0e0e0e
+        inactive_workspace #595959 #0e0e0e
+        urgent_workspace #c0c0c0 #ff4500
+    }
+}
+
+client.focused #c0c0c0 #c0c0c0 #595959
+client.focused_inactive #292929 #292929 #c0c0c0
+client.unfocused #292929 #292929 #595959
+client.urgent #ff4500 #ff4500 #c0c0c0
+
+
+
+#assign application to workspace
+assign [class="^URxvt$"] → 3: terms
+assign [class="Firefox"] → 2: web
+assign [class="Opera"] → 2: web
+assign [class="Google-chrome"] → 2: web
+assign [class="vlc"] → 4: media
+assign [class="xv/mplayer"] → 4: media
+assign [class="spotify"] - 4: media
+assign [class="Gimp"] → 6: vm
+assign [class="vmware"] → 6: vm
+assign [class="libreoffice-writer"] → 5: off
+
+# Some Apps to launch at startup
+exec feh --bg-scale /home/jkordish/Pictures/Pirate.jpg &
+exec dunst -config ~jkordish/.dunstrc&
+exec SpiderOak &
+exec nm-applet &
