@@ -1,31 +1,44 @@
-! COLORS
-URxvt*foreground: #e5e5e5 
-URxvt*background: #1d1d1d
-URxvt*cursorColor: #FFF9EC
-!Black
-*color0: #121212
-*color8: #2e3436
-!Red
-*color1: #a35b66
-*color9: #ab6b74
-!Green
-*color2: #99ab6f
-*color10: #acb792
-!Yellow
-*color3: #ca9733
-*color11: #ccaa69
-!Blue
-*color4: #495d6e
-*color12: #687987
-!Magenta
-*color5: #825969
-*color13: #977381
-!Cyan
-*color6: #839191
-*color14: #98A4A4
-!White
-*color7: #E0E0E0
-*color15: #e5e5e5
+! ------------------------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
+! --- special colors ---
+*background: #0d1926
+*foreground: #d9e6f2
+! --- standard colors ---
+! black
+*color0: #2f2f2f
+! bright_black
+*color8: #7d7d7d
+! red
+*color1: #af9a86
+! bright_red
+*color9: #ddd4cb
+! green
+*color2: #86af9a
+! bright_green
+*color10: #cbddd4
+! yellow
+*color3: #9aaf86
+! bright_yellow
+*color11: #d4ddcb
+! blue
+*color4: #9a86af
+! bright_blue
+*color12: #d4cbdd
+! cyan
+*color5: #869aaf
+! bright_cyan
+*color13: #cbd4dd
+! magenta
+*color6: #af869a
+! bright_magenta
+*color14: #ddcbd4
+! white
+*color7: #b6b6b6
+! bright_white
+*color15: #ffffff
 
 ! URXVT SETTINGS
 !
@@ -77,7 +90,6 @@ Xft.rgba:                   rgb
 Xft.dpi:                    96
 
 ! xpdf
-
 xpdf*enableFreetype:    yes
 xpdf*antialias:         yes
 xpdf*foreground:        black
