@@ -15,3 +15,5 @@ COMPLETION_WAITING_DOTS="true"
 
 # Some Aliases
 alias ls='ls -F'
+
+function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
