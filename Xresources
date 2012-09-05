@@ -63,12 +63,12 @@ URxvt.background:           #000000
 URxvt*loginShell:           true
 URxvt*termName:             rxvt-unicode-256color
 ! Consolas fonts are found in AUR. ttf-microsoft-consolas
-URxvt*font:                 xft:Consolas-14-bold
-URxvt*boldFont:             xft:Consolas-15-bold
+URxvt*font:                 xft:Consolas:pixelsize=12:autohint=true
+URxvt*boldFont:             xft:Consolas:pixelsize=12:bold:autohint=true
 URxvt*intensityStyles:      true
 
 ! FONTS
-Xft.autohint:               0
+Xft.autohint:               1
 Xft.lcdfilter:              lcddefault
 Xft.hintstyle:              hintfull
 Xft.hinting:                1
