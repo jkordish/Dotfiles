@@ -14,6 +14,8 @@ DISABLE_AUTO_TITLE="false"
 COMPLETION_WAITING_DOTS="true"
 
 # Some Aliases
-alias ls='ls -F'
+alias ls='ls -F --color=always'
 
 function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
+
+function upsrc { command yaourt -Q | grep -E 'local.*git' | cut -d/ -f 2 | awk '{print $1}' | xargs pacaur -yf }
