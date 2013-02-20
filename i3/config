@@ -1,9 +1,9 @@
 # fonts
 
 # font for window titles. ISO 10646 = Unicode
-font -*-anorexia-medium-*-*-*-11-*-*-*-*-*-iso10646-1
+font -*-terminus-medium-*-normal-*-12-*-*-*-*-*-iso10646-1
 floating_modifier Mod4
-new_window normal 
+new_window normal
 #new_float 1pixel
 
 # colors
@@ -22,8 +22,7 @@ client.background			   #1d1d1d
 bindsym Mod4+Return exec urxvtc
 # kill focused window
 bindsym Mod4+q kill
-bindsym Mod4+p exec dmenu_run -fn  "-*-anorexia-medium-*-*-*-11-*-*-*-*-*-*-*" -nb "#101010" -nf "#999999" -sb "#191919" -sf "#825969" -b 
-#bindsym Mod4+p exec dmenu_run -fn -*-pixelcarnage-monospace-medium-*-normal-*-14-*-*-*-*-*-*-* -nb "#101010" -nf "#999999" -sb "#191919" -sf "#825969" -b
+bindsym Mod4+p exec dmenu_run -fn  "-*-terminus-medium-*-normal-*-12-*-*-*-*-*-iso10646-1" -nb "#101010" -nf "#999999" -sb "#191919" -sf "#825969" -b
 
 # change focus
 bindsym Mod4+j focus right
@@ -75,25 +74,25 @@ bindsym Mod4+a focus parent
 #bindsym Mod1+d focus child
 
 # switch to workspace
-bindsym Mod4+1 workspace 1: main
+bindsym Mod4+1 workspace 1: code
 bindsym Mod4+2 workspace 2: web
 bindsym Mod4+3 workspace 3: terms
 bindsym Mod4+4 workspace 4: media
 bindsym Mod4+5 workspace 5: off
 bindsym Mod4+6 workspace 6: vm
-bindsym Mod4+7 workspace 7
+bindsym Mod4+7 workspace 7: art
 bindsym Mod4+8 workspace 8
 bindsym Mod4+9 workspace 9
 bindsym Mod4+0 workspace 10
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move workspace 1: main
+bindsym Mod4+Shift+1 move workspace 1: code
 bindsym Mod4+Shift+2 move workspace 2: web
 bindsym Mod4+Shift+3 move workspace 3: terms
 bindsym Mod4+Shift+4 move workspace 4: media
 bindsym Mod4+Shift+5 move workspace 5: off
 bindsym Mod4+Shift+6 move workspace 6: vm
-bindsym Mod4+Shift+7 move workspace 7
+bindsym Mod4+Shift+7 move workspace 7: art
 bindsym Mod4+Shift+8 move workspace 8
 bindsym Mod4+Shift+9 move workspace 9
 bindsym Mod4+Shift+0 move workspace 10
@@ -159,14 +158,14 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 
 # Screenshot
-bindsym 0xff61 exec scrot  ~/Imágenes/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png
+# bindsym 0xff61 exec scrot  ~/images/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png
 
 bar {
-    status_command conky
+    #status_command conky
+    status_command i3status
     #mode dock
-    position top 
-    #font -*-anorexia-medium-*-*-*-11-*-*-*-*-*-*-*
-    font -*-pixelcarnage monospace-medium-*-normal-*-14-*-*-*-*-*-*-*
+    position top
+    font -*-terminus-medium-*-normal-*-12-*-*-*-*-*-iso10646-1
     workspace_buttons yes
     colors {
         background #0e0e0e
@@ -186,19 +185,22 @@ client.urgent #ff4500 #ff4500 #c0c0c0
 
 
 #assign application to workspace
+assign [class="jetbrains-pycharm"] → 1: code
 assign [class="^URxvt$"] → 3: terms
 assign [class="Firefox"] → 2: web
+assign [class="Thunderbird"] → 2: web
 assign [class="Opera"] → 2: web
 assign [class="Google-chrome"] → 2: web
 assign [class="vlc"] → 4: media
 assign [class="xv/mplayer"] → 4: media
-assign [class="spotify"] - 4: media
-assign [class="Gimp"] → 6: vm
-assign [class="vmware"] → 6: vm
+assign [class="Spotify"] → 4: media
+assign [class="Gimp"] → 7: Art
+assign [class="Vmware"] → 6: vm
 assign [class="libreoffice-writer"] → 5: off
 
 # Some Apps to launch at startup
-exec feh --bg-scale /home/jkordish/Pictures/Pirate.jpg &
-exec dunst -config ~jkordish/.dunstrc&
-exec SpiderOak &
-exec nm-applet &
+exec feh --bg-scale /home/jkordish/Pictures/Comics_punisher_186033.jpg
+exec dunst -config ~jkordish/.dunstrc
+exec SpiderOak
+exec nm-applet
+exec gnome-sound-applet
