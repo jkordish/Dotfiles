@@ -1,3 +1,4 @@
+Xft.lcdfilter: lcddefault
 ! COLORS
 URxvt*foreground: #e5e5e5
 URxvt*background: #1d1d1d
@@ -33,7 +34,7 @@ URxvt*cursorColor: #FFF9EC
 ! urxvt-perls-git urxvt-vtwheel urxvt-autocomplete-all-the-things-git
 !
 !URxvt.perl-ext-common:      default,tabbed,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
-URxvt.perl-ext-common:      default,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
+URxvt.perl-ext-common:      default,tabbed,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
 URxvt.keysym.Mod4-slash:    perl:aAtt:complete
 URxvt.keysym.Mod4-u:        perl:url-select:select_next
 URxvt.keysym.Mod4-Escape:   perl:keyboard-select:activate

@@ -11,6 +11,8 @@ zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' substitute 1
 zstyle :compinstall filename '/home/jkordish/.zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit colors promptinit
+promptinit
+colors
 compinit
 # End of lines added by compinstall

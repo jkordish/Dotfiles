@@ -10,6 +10,7 @@ antigen-bundle ruby
 antigen-bundle pip
 antigen-bundle archlinux
 antigen-bundle python
+antigen-bundle kennethreitz/autoenv
 
 # Syntax highlighting bundle.
 antigen-bundle zsh-users/zsh-syntax-highlighting
@@ -20,4 +21,4 @@ antigen-theme dpoggi
 # Tell antigen that you're done.
 antigen-apply
 
-# reset prompt
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
