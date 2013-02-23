@@ -34,7 +34,7 @@ URxvt*cursorColor: #FFF9EC
 ! urxvt-perls-git urxvt-vtwheel urxvt-autocomplete-all-the-things-git
 !
 !URxvt.perl-ext-common:      default,tabbed,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
-URxvt.perl-ext-common:      default,tabbed,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
+URxvt.perl-ext-common:      default,tabbedex,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
 URxvt.keysym.Mod4-slash:    perl:aAtt:complete
 URxvt.keysym.Mod4-u:        perl:url-select:select_next
 URxvt.keysym.Mod4-Escape:   perl:keyboard-select:activate
@@ -67,6 +67,9 @@ URxvt*termName:             rxvt-unicode-256color
 URxvt*font:                 xft:Consolas:pixelsize=12:autohint=true
 URxvt*boldFont:             xft:Consolas:pixelsize=12:bold:autohint=true
 URxvt*intensityStyles:      true
+URXvt.tabbed.reopen-on-close: yes
+URxvt.url-select.autocopy:  yes
+URxvt.url-select.underline: yes
 
 ! FONTS
 Xft.autohint:               1
