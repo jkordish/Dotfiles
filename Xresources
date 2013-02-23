@@ -30,10 +30,13 @@ URxvt*cursorColor: #FFF9EC
 
 ! URXVT SETTINGS
 !
-! Arch Linux requires the following from AUR: 
-! urxvt-perls-git urxvt-vtwheel urxvt-autocomplete-all-the-things-git
+! Arch Linux requires the following from AUR:
+! urxvt-autocomplete-all-the-things-git
+! urxvt-font-size-git 
+! urxvt-perls-git
+! urxvt-tabbedex-git
+! urxvt-vtwheel
 !
-!URxvt.perl-ext-common:      default,tabbed,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
 URxvt.perl-ext-common:      default,tabbedex,url-select,vtwheel,clipboard,keyboard-select,autocomplete-ALL-the-things,searchable-scrollback
 URxvt.keysym.Mod4-slash:    perl:aAtt:complete
 URxvt.keysym.Mod4-u:        perl:url-select:select_next
