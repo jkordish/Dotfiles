@@ -18,3 +18,5 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

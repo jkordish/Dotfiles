@@ -13,6 +13,9 @@ DISABLE_AUTO_TITLE="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# ZSH Theme
+ZSH_THEME="dpoggi"
+
 # Some Aliases
 alias ls='ls -F --color=always'
 
@@ -35,6 +38,15 @@ alias pacupd='sudo pacman -Sy && sudo abs'     # Update and refresh the local pa
 alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
 alias pacmir='sudo pacman -Syy'                # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
+# zprofile loads up antigen
 source ~/.zprofile
+
+# zfunctions contains additional functions
 source ~/.zfunctions
+
+# zshenv contains environmental variables
 source ~/.zshenv
+
+# Using the solarized dircolors from aur
+# https://aur.archlinux.org/packages/dircolors-solarized-git/
+eval `dircolors /etc/dir_colors`

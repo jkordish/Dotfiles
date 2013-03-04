@@ -16,9 +16,7 @@ antigen-bundle kennethreitz/autoenv
 antigen-bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen-theme dpoggi
+# antigen-theme dpoggi
 
 # Tell antigen that you're done.
 antigen-apply
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
