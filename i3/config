@@ -20,9 +20,12 @@ client.background			   #1d1d1d
 
 # start a terminal
 bindsym Mod4+Return exec urxvtc
+#bindsym Mod4+Return exec gnome-terminal
 # kill focused window
 bindsym Mod4+q kill
-bindsym Mod4+p exec dmenu_run -fn  "-*-terminus-medium-*-normal-*-12-*-*-*-*-*-iso10646-1" -nb "#101010" -nf "#999999" -sb "#191919" -sf "#825969" -b
+#bindsym Mod4+p exec dmenu_run -fn  "-*-terminus-medium-*-normal-*-16-*-*-*-*-*-iso10646-1" -nb "#101010" -nf "#999999" -sb "#191919" -sf "#825969" -b
+#i3 now ships with a handy i3-demnu-desktop so I'm using that
+bindsym Mod4+p exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -b'
 
 # change focus
 bindsym Mod4+j focus right
@@ -71,7 +74,7 @@ bindsym Mod4+space focus mode_toggle
 bindsym Mod4+a focus parent
 
 # focus the child container
-#bindsym Mod1+d focus child
+bindsym Mod1+d focus child
 
 # switch to workspace
 bindsym Mod4+1 workspace 1: code
@@ -102,7 +105,7 @@ bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod4+Shift+q exit
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Lock screen with i3lock
 bindsym control+mod1+l exec xautolock -locknow
@@ -110,12 +113,8 @@ bindsym control+mod1+l exec xautolock -locknow
 # ScratchPad
 # Make the currently focused window a scratchpad
 bindsym Mod4+Shift+minus move scratchpad
-#
-# # Show the first scratchpad window
-bindsym Mod4+minus scratchpad show
-#
-# # Show the sup-mail scratchpad window, if any.
-#bindsym mod4+s [title="^Sup ::"] scratchpad show
+# Show the first scratchpad window
+bindsym Mod4+Shift+plus scratchpad show
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -170,8 +169,9 @@ bar {
     colors {
         background #0e0e0e
         statusline #c0c0c0
-        focused_workspace #c0c0c0 #0e0e0e
-        #active_workspace   #696969 #0e0e0e
+        #focused_workspace #c0c0c0 #0e0e0e
+        focused_workspace    #F83F3F #CCCCCC #444546
+        active_workspace   #696969 #0e0e0e
         inactive_workspace #595959 #0e0e0e
         urgent_workspace #c0c0c0 #ff4500
     }
@@ -199,8 +199,10 @@ assign [class="Vmware"] → 6: vm
 assign [class="libreoffice-writer"] → 5: off
 
 # Some Apps to launch at startup
-exec feh --bg-scale /home/jkordish/Pictures/Comics_punisher_186033.jpg
-exec dunst -config ~jkordish/.dunstrc
-exec SpiderOak
-exec nm-applet
-exec gnome-sound-applet
+exec feh --bg-scale /home/jkordish/Pictures/comics_daredevil_marvel_desktop_1920x1080_hd-wallpaper-1074918.jpg &
+# Dunst is a small notification utility
+exec dunst -config ~jkordish/.dunstrc &
+exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon &
+exec /usr/bin/gnome-keyring-daemon --start --components=gpg,secrets,ssh,pkcs11 &
+exec SpiderOak &
+exec nm-applet --sm-disable &
