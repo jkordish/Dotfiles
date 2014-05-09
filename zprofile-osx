@@ -30,6 +30,7 @@ antigen-bundle osx
 antigen-bundle sublime
 antigen-bundle terminalapp
 antigen-bundle tmuxinator
+antigen-bundle vagrant
 
 # Load the theme.
 antigen-theme dpoggi
