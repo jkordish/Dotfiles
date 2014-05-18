@@ -1,11 +1,2 @@
 function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
-function upsrc { command yaourt -Q | grep -E 'local.*git*|\-hg|\-svn' | cut -d/ -f 2 | awk '{print $1}' | xargs pacaur -yf --noedit --noconfirm }
-function upE17 { command pacaur --noedit --noconfirm -fy efl-svn && \
-pacaur --noedit --noconfirm -fy evas_generic_loaders-svn && \
-pacaur --noedit --noconfirm -fy ewebkit-svn && \
-pacaur --noedit --noconfirm -fy elementary-svn && \
-pacaur --noedit --noconfirm -fy enlightenment17-svn && \
-pacaur --noedit --noconfirm -fy e-modules-extra-svn && \
-pacaur --noedit --noconfirm -fy terminology-svn comp-scale-svn engage-svn }
-function upi3  { command pacaur --noedit --noconfirm -fy i3-git i3lock-git i3status-git }
-function upCapella { command rsync -r -t -v --progress -u --modify-window=1 -c -z -i -s /home/jkordish/Documents/Capella /home/jkordish/Box }
+function pipu  { command pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U }
