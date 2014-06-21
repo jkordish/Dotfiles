@@ -13,9 +13,6 @@ DISABLE_AUTO_TITLE="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# ZSH Theme
-ZSH_THEME="dpoggi"
-
 unsetopt auto_name_dirs
 setopt nullglob
 
