@@ -23,4 +23,12 @@ setopt nullglob
 alias ls='ls -F'
 
 # zfunctions contains additional functions
-source ~/.zfunctions
+[[ -s "$HOME/.zfunctions" ]] && source ~/.zfunctions
+
+# NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+# GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin"
