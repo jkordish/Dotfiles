@@ -26,3 +26,12 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
+# zfunctions contains additional functions
+[[ -s "$HOME/.zfunctions" ]] && source ~/.zfunctions
+# NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+# GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin"

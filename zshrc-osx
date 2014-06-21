@@ -13,22 +13,46 @@ DISABLE_AUTO_TITLE="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# ZSH Theme
-ZSH_THEME="dpoggi"
-
 unsetopt auto_name_dirs
 setopt nullglob
 
 # Some Aliases
 alias ls='ls -F'
 
-# zfunctions contains additional functions
-[[ -s "$HOME/.zfunctions" ]] && source ~/.zfunctions
+### ANTIGEN ###
+source  $HOME/.antigen/antigen.zsh
+export ANTIGEN_DEFAULT_REPO_URL=https://github.com/sharat87/oh-my-zsh.git
 
-# NVM
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
-# GVM
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH="$PATH:$HOME/.rvm/bin"
+# Load the oh-my-zsh's library.
+antigen-use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen-bundle git
+antigen-bundle ant
+antigen-bundle svn
+antigen-bundle ruby
+antigen-bundle pip
+antigen-bundle brew
+antigen-bundle python
+antigen-bundle kennethreitz/autoenv
+antigen-bundle lein
+antigen-bundle extract
+antigen-bundle zsh-users/zsh-completions src
+antigen-bundle zsh-users/zsh-history-substring-search
+antigen-bundle command-not-found
+antigen-bundle sharat87/autoenv
+antigen-bundle zsh-users/zsh-syntax-highlighting
+antigen-bundle node
+antigen-bundle npm
+antigen-bundle nvm
+antigen-bundle osx
+antigen-bundle sublime
+antigen-bundle terminalapp
+antigen-bundle tmuxinator
+antigen-bundle vagrant
+
+# Load the theme.
+antigen-theme dpoggi
+
+# Tell antigen that you're done.
+antigen-apply
