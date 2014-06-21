@@ -28,6 +28,8 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 export PATH="$HOME/.local/bin:$PATH"
 # zfunctions contains additional functions
 [[ -s "$HOME/.zfunctions" ]] && source ~/.zfunctions
+# zfunctions contains additional functions
+[[ -s "$HOME/..zfunctions.secret" ]] && source ~/.zfunctions.secret
 # NVM
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 # GVM
