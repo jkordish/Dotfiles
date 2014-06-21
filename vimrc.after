@@ -1,5 +1,2 @@
-# Load after Janus
-# https://github.com/carlhuda/janus
 syntax enable
 set background=dark
-colorscheme solarized
