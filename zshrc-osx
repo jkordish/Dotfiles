@@ -27,29 +27,32 @@ export ANTIGEN_DEFAULT_REPO_URL=https://github.com/sharat87/oh-my-zsh.git
 antigen-use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen-bundle git
-antigen-bundle ant
-antigen-bundle svn
-antigen-bundle ruby
-antigen-bundle pip
-antigen-bundle brew
-antigen-bundle python
-antigen-bundle kennethreitz/autoenv
-antigen-bundle lein
-antigen-bundle extract
-antigen-bundle zsh-users/zsh-completions src
-antigen-bundle zsh-users/zsh-history-substring-search
-antigen-bundle command-not-found
-antigen-bundle sharat87/autoenv
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle node
-antigen-bundle npm
-antigen-bundle nvm
-antigen-bundle osx
-antigen-bundle sublime
-antigen-bundle terminalapp
-antigen-bundle tmuxinator
-antigen-bundle vagrant
+antigen-bundles <<EOBUNDLES
+command-not-found
+git
+ant
+svn
+ruby
+pip
+brew
+python
+lein
+extract
+zsh-users/zsh-completions src
+zsh-users/zsh-history-substring-search
+sharat87/autoenv
+zsh-users/zsh-syntax-highlighting
+node
+npm
+nvm
+osx
+tmuxinator
+vagrant
+colored-man
+vi-mode
+jimhester/per-directory-history
+hchbaw/opp.zsh
+EOBUNDLES
 
 # Load the theme.
 antigen-theme dpoggi
