@@ -16,6 +16,11 @@ COMPLETION_WAITING_DOTS="true"
 unsetopt auto_name_dirs
 setopt nullglob
 
+# turn on vi mode
+export EDITOR=vim
+export KEYTIMEOUT=1
+bindkey -v
+
 # Some Aliases
 alias ls='ls -F'
 

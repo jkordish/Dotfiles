@@ -1,2 +1,9 @@
 function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
 function pipu  { command pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U }
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
