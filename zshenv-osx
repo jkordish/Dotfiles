@@ -3,15 +3,14 @@ export GDK_USE_XFT=1
 export QT_XFT=true
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 # perl
-export PERL_LOCAL_LIB_ROOT="$HOME/.perl5"
-export PERL_MB_OPT="--install_base $HOME/.perl5"
-export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"
-export PERL5LIB="$HOME/.perl5/lib/perl5/x86_64-linux-thread-multi:$HOME/.perl5/lib/perl5"
-export PATH="$PATH:/usr/bin/vendor_perl:/usr/bin/core_perl"
-export PATH="$HOME/.perl5/bin:$PATH"
+[[ -d '$HOME/.perl5' ]] &&.export PERL_LOCAL_LIB_ROOT="$HOME/.perl5"
+[[ -d '$HOME/.perl5' ]] &&.export PERL_MB_OPT="--install_base $HOME/.perl5"
+[[ -d '$HOME/.perl5' ]] &&.export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"
+[[ -d '$HOME/.perl5' ]] &&.export PERL5LIB="$HOME/.perl5/lib/perl5/x86_64-linux-thread-multi:$HOME/.perl5/lib/perl5"
+[[ -d '$HOME/.perl5' ]] &&.export PATH=$PATH:$HOME/.perl5/bin:/usr/bin/vendor_perl:/usr/bin/core_perl
 # java paths
 export JAVA_HOME="$(/usr/libexec/java_home)"
-[[ -n $JAVA_HOME ]] && export PATH="$PATH:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin"
+[[ -n $JAVA_HOME ]] && export PATH=$PATH:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin
 [[ -n $JAVA_HOME ]] && export JAVA_FONTS="/usr/share/fonts/TTF"
 [[ -n $JAVA_HOME ]] && export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 # BREW
@@ -19,10 +18,10 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # AWS
 export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec"
 export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
-export AWS_CREDENTIAL_FILE="$HOME/.aws-credentials-master"
+[[ -s "$HOME/.aws-credentials-master" ]] && export AWS_CREDENTIAL_FILE="$HOME/.aws-credentials-master"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 # python
-[[ -d '/usr/local/lib/python2.7/site-packages' ]] && "export PYTHONPATH=/usr/local/lib/python2.7/site-packages"
+[[ -d '/usr/local/lib/python2.7/site-packages' ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 # local bin
 [[ -d '$HOME/.local/bin' ]] && export PATH="$HOME/.local/bin:$PATH"
 # zfunctions contains additional functions

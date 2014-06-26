@@ -65,4 +65,3 @@ antigen-theme dpoggi
 # Tell antigen that you're done.
 antigen-apply
 
-source .zshenv
