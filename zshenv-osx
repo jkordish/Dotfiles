@@ -19,16 +19,16 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # AWS
 export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec"
 export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
-export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
+export AWS_CREDENTIAL_FILE="$HOME/.aws-credentials-master"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 # python
-[[ -d '/usr/local/lib/python2.7/site-packages' ]] && export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+[[ -d '/usr/local/lib/python2.7/site-packages' ]] && "export PYTHONPATH=/usr/local/lib/python2.7/site-packages"
 # local bin
 [[ -d '$HOME/.local/bin' ]] && export PATH="$HOME/.local/bin:$PATH"
 # zfunctions contains additional functions
-[[ -s "$HOME/.zfunctions" ]] && source ~/.zfunctions
+[[ -s "$HOME/.zfunctions" ]] && source "$HOME/.zfunctions"
 # zfunctions .secret isn't in github
-[[ -s "$HOME/.zfunctions.secret" ]] && source ~/.zfunctions.secret
+[[ -s "$HOME/.zfunctions.secret" ]] && source "$HOME/.zfunctions.secret"
 # NVM
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 # GVM
