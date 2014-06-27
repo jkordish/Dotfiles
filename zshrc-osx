@@ -26,36 +26,37 @@ alias ls='ls -F'
 
 ### ANTIGEN ###
 source  $HOME/.antigen/antigen.zsh
-export ANTIGEN_DEFAULT_REPO_URL=https://github.com/sharat87/oh-my-zsh.git
+#export ANTIGEN_DEFAULT_REPO_URL=https://github.com/sharat87/oh-my-zsh.git
 
 # Load the oh-my-zsh's library.
 antigen-use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen-bundles <<EOBUNDLES
+sharat87/autoenv
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions src
+zsh-users/zsh-history-substring-search
 command-not-found
+virtualenvwrapper
 git
 ant
-svn
-ruby
 pip
 brew
 python
-lein
 extract
-zsh-users/zsh-completions src
-zsh-users/zsh-history-substring-search
-sharat87/autoenv
-zsh-users/zsh-syntax-highlighting
+colorize
+atom
 node
 npm
 nvm
+go
+ruby
+rvm
 osx
-tmuxinator
 vagrant
 colored-man
 vi-mode
-jimhester/per-directory-history
 hchbaw/opp.zsh
 EOBUNDLES
 
