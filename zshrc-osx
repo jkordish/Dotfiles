@@ -13,14 +13,57 @@ DISABLE_AUTO_TITLE="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# ZSH Theme
-ZSH_THEME="dpoggi"
-
 unsetopt auto_name_dirs
 setopt nullglob
+
+# turn on vi mode
+export EDITOR=vim
+export KEYTIMEOUT=1
+bindkey -v
 
 # Some Aliases
 alias ls='ls -F'
 
-# zfunctions contains additional functions
-source ~/.zfunctions
+### ANTIGEN ###
+source  $HOME/.antigen/antigen.zsh
+#export ANTIGEN_DEFAULT_REPO_URL=https://github.com/sharat87/oh-my-zsh.git
+
+# Load the oh-my-zsh's library.
+antigen-use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen-bundles <<EOBUNDLES
+sharat87/autoenv
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions src
+zsh-users/zsh-history-substring-search
+command-not-found
+virtualenvwrapper
+git
+ant
+pip
+brew
+python
+extract
+colorize
+atom
+node
+npm
+nvm
+go
+ruby
+rvm
+osx
+vagrant
+colored-man
+vi-mode
+hchbaw/opp.zsh
+EOBUNDLES
+
+# Load the theme.
+antigen-theme dpoggi
+
+# Tell antigen that you're done.
+antigen-apply
+
+source $HOME/.zshenv

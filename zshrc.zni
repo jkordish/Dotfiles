@@ -9,7 +9,7 @@ zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character t
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'r:|[._-/]=** r:|=**'
 zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' substitute 1
-zstyle :compinstall filename '/home/jkordish/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit colors promptinit
 promptinit
