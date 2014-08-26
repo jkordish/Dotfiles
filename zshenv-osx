@@ -35,3 +35,5 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" && source "$HOME/.rvm/scripts/rvm" && `rvm default`
+# Scala
+SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
