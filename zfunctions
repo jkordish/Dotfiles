@@ -1,5 +1,9 @@
+### general ###
 function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
-function pipu  { command pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U }
+function pipu  { command pip list --outdated | grep -i latest | cut -f1 -d\( | xargs pip install -U }
+### general ###
+
+
 ### vim ###
 function zle-line-init zle-keymap-select {
     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
@@ -11,6 +15,7 @@ zle -N zle-keymap-select
 ### vim ###
 
 ### osx ###
-function osx-updatedb { command sudo -u $USER /usr/libexec/locate.updatedb }
-function osx-fixperm { command sudo find ~ $TMPDIR.. -exec chflags -h nouchg,nouappnd,noschg,nosappnd {} + -exec chown -h $UID {} + -exec chmod +rw {} + -exec chmod -h -N {} + -type d -exec chmod -h +x {} + 2>&- }
-
+function osx-updatedb    { command sudo -u $USER /usr/libexec/locate.updatedb }
+function osx-fixperm     { command sudo find ~ $TMPDIR.. -exec chflags -h nouchg,nouappnd,noschg,nosappnd {} + -exec chown -h $UID {} + -exec chmod +rw {} + -exec chmod -h -N {} + -type d -exec chmod -h +x {} + 2>&- }
+function osx-cask-update { command brew cask cleanup && for pkg in `brew cask list`; do echo "updating $pkg" && brew cask install --force $pkg; done }
+### osx ###
