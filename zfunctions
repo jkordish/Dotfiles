@@ -1,6 +1,6 @@
 ### general ###
 function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
-function pipu  { command for module in $(pip list --outdated | grep -i latest | cut -f1 -d\(); do pip install -U $module --allow-external $module; done"
+function pipu  { command `for module in $(pip list --outdated | grep -i latest | cut -f1 -d\(); do pip install -U $module --allow-external $module; done` }
 ### general ###
 
 
