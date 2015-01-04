@@ -5,9 +5,9 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 # perl
 [[ -d '$HOME/.perl5' ]] &&.export PERL_LOCAL_LIB_ROOT="$HOME/.perl5"
 [[ -d '$HOME/.perl5' ]] &&.export PERL_MB_OPT="--install_base $HOME/.perl5"
-[[ -d '$HOME/.perl5' ]] &&.export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"
-[[ -d '$HOME/.perl5' ]] &&.export PERL5LIB="$HOME/.perl5/lib/perl5/x86_64-linux-thread-multi:$HOME/.perl5/lib/perl5"
-[[ -d '$HOME/.perl5' ]] &&.export PATH=$PATH:$HOME/.perl5/bin:/usr/bin/vendor_perl:/usr/bin/core_perl
+[[ -d '$HOME/.perl5' ]] && export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"
+[[ -d '$HOME/.perl5' ]] && export PERL5LIB="$HOME/.perl5/lib/perl5/x86_64-linux-thread-multi:$HOME/.perl5/lib/perl5"
+[[ -d '$HOME/.perl5' ]] && export PATH=$PATH:$HOME/.perl5/bin:/usr/bin/vendor_perl:/usr/bin/core_perl
 # java paths
 export JAVA_HOME="$(/usr/libexec/java_home)"
 [[ -n $JAVA_HOME ]] && export PATH=$PATH:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin
@@ -15,6 +15,9 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 [[ -n $JAVA_HOME ]] && export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 # BREW
 [[ -s '/usr/local/bin/brew' ]] && export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+# Brewed GNU coreutils
+[[ -d '/usr/local/opt/coreutils/libexec/gnubin' ]] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+[[ -d '/usr/local/opt/coreutils/libexec/gnuman' ]] && export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # AWS
 export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec"
 export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
@@ -34,6 +37,6 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 # GVM
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" && source "$HOME/.rvm/scripts/rvm" && `rvm default`
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 # Scala
 SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
