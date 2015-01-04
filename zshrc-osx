@@ -13,6 +13,7 @@ DISABLE_AUTO_TITLE="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# Recommended for RVM
 unsetopt auto_name_dirs
 setopt nullglob
 
@@ -26,7 +27,6 @@ alias ls='ls -F'
 
 ### ANTIGEN ###
 source  $HOME/.antigen/antigen.zsh
-#export ANTIGEN_DEFAULT_REPO_URL=https://github.com/sharat87/oh-my-zsh.git
 
 # Load the oh-my-zsh's library.
 antigen-use oh-my-zsh
