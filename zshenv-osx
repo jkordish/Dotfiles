@@ -3,7 +3,7 @@ export GDK_USE_XFT=1
 export QT_XFT=true
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 # perl
-if [[ -d '$HOME/.perl5' ]];then
+if [[ -d '$HOME/.perl5' ]]; then
   export PERL_LOCAL_LIB_ROOT="$HOME/.perl5"
   export PERL_MB_OPT="--install_base $HOME/.perl5"
   export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"
@@ -39,7 +39,7 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 # GVM
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # Scala
 SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 # JENV
