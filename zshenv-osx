@@ -27,12 +27,12 @@ export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
 [[ -s "/usr/local/bin/aws_zsh_completer.sh" ]] && source /usr/local/bin/aws_zsh_completer.sh
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 # python
-[[ -d '/usr/local/lib/python2.7/site-packages' ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+#[[ -d '/usr/local/lib/python2.7/site-packages' ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 # local bin
 [[ -d '$HOME/.local/bin' ]] && export PATH="$HOME/.local/bin:$PATH"
 # zfunctions contains additional functions
-[[ -s "$HOME/.zfunctions" ]] && source "$HOME/.zfunctions"
+[[ -f "$HOME/.zfunctions" ]] && source "$HOME/.zfunctions"
 # zfunctions .secret isn't in github
-[[ -s "$HOME/.zfunctions.secret" ]] && source "$HOME/.zfunctions.secret"
+[[ -f "$HOME/.zfunctions.secret" ]] && source "$HOME/.zfunctions.secret"
 # Scala
 SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
