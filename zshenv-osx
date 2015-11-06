@@ -21,11 +21,11 @@ fi
 [[ -d '/usr/local/opt/coreutils/libexec/gnubin' ]] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 [[ -d '/usr/local/opt/coreutils/libexec/gnuman' ]] && export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # AWS
-export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec"
+export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/$(ls /usr/local/Cellar/ec2-ami-tools)/libexec"
 export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
 [[ -s "$HOME/.aws-credentials-master" ]] && export AWS_CREDENTIAL_FILE="$HOME/.aws-credentials-master"
 [[ -s "/usr/local/bin/aws_zsh_completer.sh" ]] && source /usr/local/bin/aws_zsh_completer.sh
-export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/$(ls /usr/local/Cellar/ec2-api-tools)/libexec"
 # python
 #[[ -d '/usr/local/lib/python2.7/site-packages' ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 # local bin
