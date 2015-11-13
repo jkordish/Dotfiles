@@ -33,20 +33,19 @@ antigen-use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen-bundles <<EOBUNDLES
-sharat87/autoenv
+Tarrasch/zsh-autoenv
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions src
 zsh-users/zsh-history-substring-search
 command-not-found
 virtualenvwrapper
 git
-ant
 pip
 brew
+brew-cask
 python
 extract
 colorize
-atom
 node
 npm
 nvm
@@ -55,9 +54,8 @@ ruby
 rvm
 osx
 vagrant
-colored-man
 vi-mode
-hchbaw/opp.zsh
+colored-man-pages
 EOBUNDLES
 
 # Load the theme.
