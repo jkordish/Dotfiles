@@ -1,5 +1,4 @@
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' completions 1
 zstyle ':completion:*' format '%d:'
@@ -9,14 +8,16 @@ zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character t
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'r:|[._-/]=** r:|=**'
 zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' substitute 1
-zstyle :compinstall filename '/home/jkordish/.zshrc'
+zstyle :compinstall filename /home/$(echo -n $USER)/.zshrc
 
-autoload -Uz compinit compdef colors promptinit bashcompinit
+autoload -Uz compinit compdef promptinit bashcompinit colors
 promptinit
-colors
 compinit
 bashcompinit
+colors
 # End of lines added by compinstall
+
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
@@ -59,7 +60,7 @@ zsh-users/zsh-completions src
 zsh-users/zsh-history-substring-search
 command-not-found
 virtualenvwrapper
-#git
+git
 pip
 brew
 brew-cask
