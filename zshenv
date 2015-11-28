@@ -27,6 +27,9 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
 
+# fpath
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # nvm
 [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"
 # gvm
