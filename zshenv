@@ -26,3 +26,12 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
+
+# nvm
+[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"
+# gvm
+[ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
+# rvm
+[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"
+# jenv
+[ -d '$HOME/.jenv/bin' ] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
