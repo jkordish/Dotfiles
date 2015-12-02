@@ -1,6 +1,4 @@
-fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' completions 1
 zstyle ':completion:*' format '%d:'
@@ -12,10 +10,9 @@ zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' substitute 1
 zstyle :compinstall filename /home/$(echo -n $USER)/.zshrc
 
-autoload -Uz compinit compdef promptinit bashcompinit colors
-promptinit
+autoload -Uz +X compinit promptinit colors
 compinit
-bashcompinit
+promptinit
 colors
 # End of lines added by compinstall
 
@@ -44,7 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 unsetopt auto_name_dirs
 setopt nullglob
 
-#
+# editor
 export EDITOR=vim
 export KEYTIMEOUT=1
 bindkey -e
@@ -90,3 +87,12 @@ antigen-theme dpoggi
 
 # Tell antigen that you're done.
 antigen-apply
+
+# vim
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
