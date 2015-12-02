@@ -1,3 +1,13 @@
 syntax enable
 set background=dark
 set nu
+
+if janus#is_plugin_enabled('fugitive')
+    set statusline+=%{fugitive#statusline()}
+endif
+
+if janus#is_plugin_enabled('syntastic')
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+endif
