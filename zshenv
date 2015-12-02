@@ -30,11 +30,11 @@ export PATH="$HOME/.local/bin:$PATH"
 # fpath
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# nvm
-[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"
-# gvm
-[ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
-# rvm
-[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"
-# jenv
-[ -d '$HOME/.jenv/bin' ] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
+# NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]]      && source  "$HOME/.nvm/nvm.sh"
+# GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+ # jenv
+[[ -d '$HOME/.jenv/bin' ]] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
