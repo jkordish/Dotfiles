@@ -1,8 +1,38 @@
-# NVM
-[[ -s "$HOME/.nvm/nvm.sh" ]]      && source  "$HOME/.nvm/nvm.sh"
-# GVM
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
- # jenv
-[[ -d '$HOME/.jenv/bin' ]] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
+### ANTIGEN ###
+source  $HOME/.antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen-bundles <<EOBUNDLES
+Tarrasch/zsh-autoenv
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions src
+zsh-users/zsh-history-substring-search
+command-not-found
+virtualenvwrapper
+git
+pip
+brew
+brew-cask
+python
+extract
+colorize
+node
+npm
+nvm
+go
+ruby
+rvm
+osx
+vagrant
+vi-mode
+colored-man-pages
+EOBUNDLES
+
+# Load the theme.
+antigen-theme dpoggi
+
+# Tell antigen that you're done.
+antigen-apply
