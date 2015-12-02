@@ -1,4 +1,6 @@
+fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 # The following lines were added by compinstall
+
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' completions 1
 zstyle ':completion:*' format '%d:'
@@ -9,8 +11,6 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'r:|[._-/]=** r:|=**'
 zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' substitute 1
 zstyle :compinstall filename /home/$(echo -n $USER)/.zshrc
-
-fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz compinit compdef promptinit bashcompinit colors
 promptinit
