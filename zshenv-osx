@@ -30,9 +30,19 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/$(ls /usr/local/Cellar/ec2-api-
 #[[ -d '/usr/local/lib/python2.7/site-packages' ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 # local bin
 [[ -d '$HOME/.local/bin' ]] && export PATH="$HOME/.local/bin:$PATH"
+# Scala
+SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+# fpath
+fpath=(/usr/local/share/zsh-completions $fpath)
+# NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]]      && source  "$HOME/.nvm/nvm.sh"
+# GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+ # jenv
+[[ -d '$HOME/.jenv/bin' ]] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
 # zfunctions contains additional functions
 [[ -f "$HOME/.zfunctions" ]] && source "$HOME/.zfunctions"
 # zfunctions .secret isn't in github
 [[ -f "$HOME/.zfunctions.secret" ]] && source "$HOME/.zfunctions.secret"
-# Scala
-SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
