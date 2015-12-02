@@ -19,6 +19,12 @@ colors
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# ignore dupes in history
+setopt HIST_IGNORE_DUPS
+
+# For autocompletion of command line switches for aliase
+setopt completealiases
+
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
 
