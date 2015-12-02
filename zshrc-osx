@@ -35,3 +35,6 @@ bindkey -e
 
 # Some Aliases
 alias ls='ls -F'
+
+# had the following in zshenv but it needs to run after compinit
+[[ -s "/usr/local/bin/aws_zsh_completer.sh" ]] && source /usr/local/bin/aws_zsh_completer.sh
