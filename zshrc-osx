@@ -10,14 +10,14 @@ zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' substitute 1
 zstyle :compinstall filename /home/$(echo -n $USER)/.zshrc
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 autoload -Uz compinit compdef promptinit bashcompinit colors
 promptinit
 compinit
 bashcompinit
 colors
 # End of lines added by compinstall
-
-fpath=(/usr/local/share/zsh-completions $fpath)
 
 # ignore dupes in history
 setopt HIST_IGNORE_DUPS
