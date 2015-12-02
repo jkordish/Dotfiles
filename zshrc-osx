@@ -16,6 +16,8 @@ promptinit
 colors
 # End of lines added by compinstall
 
+fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions /usr/share/zsh/5.0.8/functions $fpath)
+
 # ignore dupes in history
 setopt HIST_IGNORE_DUPS
 
@@ -96,3 +98,5 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+[[ -s "/usr/local/bin/aws_zsh_completer.sh" ]] && source /usr/local/bin/aws_zsh_completer.sh
