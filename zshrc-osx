@@ -24,6 +24,10 @@ setopt HIST_IGNORE_DUPS
 # For autocompletion of command line switches for aliase
 setopt completealiases
 
+# Recommended for RVM
+unsetopt auto_name_dirs
+setopt nullglob
+
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
 
@@ -39,10 +43,6 @@ DISABLE_AUTO_TITLE="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# Recommended for RVM
-unsetopt auto_name_dirs
-setopt nullglob
-
 # editor
 export EDITOR=vim
 export KEYTIMEOUT=1
@@ -50,53 +50,3 @@ bindkey -e
 
 # Some Aliases
 alias ls='ls -F'
-
-### ANTIGEN ###
-source  $HOME/.antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen-bundles <<EOBUNDLES
-Tarrasch/zsh-autoenv
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-completions src
-zsh-users/zsh-history-substring-search
-command-not-found
-virtualenvwrapper
-git
-pip
-brew
-brew-cask
-python
-extract
-colorize
-node
-npm
-nvm
-go
-ruby
-rvm
-osx
-vagrant
-vi-mode
-colored-man-pages
-EOBUNDLES
-
-# Load the theme.
-antigen-theme dpoggi
-
-# Tell antigen that you're done.
-antigen-apply
-
-# vim
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-[[ -s "/usr/local/bin/aws_zsh_completer.sh" ]] && source /usr/local/bin/aws_zsh_completer.sh
