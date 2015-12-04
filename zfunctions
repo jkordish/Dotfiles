@@ -1,29 +1,10 @@
 ### general ###
 function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
 function pipu  { command `for module in $(pip list --outdated | awk '{print $1}'); do pip install -U $module --allow-external $module; done` }
+function shrug { command echo -n "¯\_(ツ)_/¯"| (pbcopy);echo "¯\_(ツ)_/¯ copied to your clipboard"; }
 ### general ###
 
-### vim ###
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-### vim ###
-
 ### osx ###
-function osx-updatedb    { command sudo -u $USER /usr/libexec/locate.updatedb }
-#function osx-fixperm     { command sudo find ~ $TMPDIR.. -exec chflags -h nouchg,nouappnd,noschg,nosappnd {} + -exec chown -h $UID {} + -exec chmod +rw {} + -exec chmod -h -N {} + -type d -exec chmod -h +x {} + 2>&- }
-function osx-cask-update { command brew cask cleanup && for pkg in `brew cask list`; do echo "updating $pkg" && brew cask install --force $pkg; done }
+function osx-updatedb { command sudo -u $USER /usr/libexec/locate.updatedb }
+#function osx-fixperm { command sudo find ~ $TMPDIR.. -exec chflags -h nouchg,nouappnd,noschg,nosappnd {} + -exec chown -h $UID {} + -exec chmod +rw {} + -exec chmod -h -N {} + -type d -exec chmod -h +x {} + 2>&- }
 ### osx ###
-
-# NVM
-function load_nvm { command [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" }
-# GVM
-function load_gvm { command [ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm" }
-# RVM
-function load_rvm { command [ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" }
-# JENV
-function load_jenv { command [ -d '$HOME/.jenv/bin' ] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv` }
