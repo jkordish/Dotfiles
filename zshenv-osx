@@ -38,7 +38,9 @@ SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
  # jenv
-[[ -d '$HOME/.jenv/bin' ]] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
+[[ -d "$HOME/.jenv/bin" ]] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
+# cargo bin installs
+[[ -d "$HOME/.multirust" ]] && export PATH="${HOME}/.multirust/toolchains/`cat ~${USER}/.multirust/default`/cargo/bin:$PATH"
 # zfunctions contains additional functions
 [[ -f "$HOME/.zfunctions" ]] && source "$HOME/.zfunctions"
 # zfunctions .secret isn't in github
