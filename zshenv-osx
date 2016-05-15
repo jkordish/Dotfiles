@@ -40,7 +40,7 @@ SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
  # jenv
 [[ -d "$HOME/.jenv/bin" ]] && `export PATH="$HOME/.jenv/bin:$PATH"; eval "$(jenv init -)"; export JENV_ROOT=/usr/local/opt/jenv`
 # cargo bin installs
-[[ -d "$HOME/.multirust" ]] && export PATH="${HOME}/.multirust/toolchains/`cat ~${USER}/.multirust/default`/cargo/bin:$PATH"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env" 1> /dev/null
 # zfunctions contains additional functions
 [[ -f "$HOME/.zfunctions" ]] && source "$HOME/.zfunctions"
 # zfunctions .secret isn't in github
