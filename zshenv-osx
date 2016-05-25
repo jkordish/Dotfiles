@@ -23,8 +23,8 @@ fi
 # AWS
 #export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/$(ls /usr/local/Cellar/ec2-ami-tools)/libexec"
 #export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
+#export EC2_HOME="/usr/local/Cellar/ec2-api-tools/$(ls /usr/local/Cellar/ec2-api-tools)/libexec"
 [[ -s "$HOME/.aws-credentials-master" ]] && export AWS_CREDENTIAL_FILE="$HOME/.aws-credentials-master"
-export EC2_HOME="/usr/local/Cellar/ec2-api-tools/$(ls /usr/local/Cellar/ec2-api-tools)/libexec"
 # python
 #[[ -d '/usr/local/lib/python2.7/site-packages' ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 # local bin
