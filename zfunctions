@@ -1,10 +1,20 @@
 ### general ###
 function pidof { command ps axww | grep -v "awk" | awk -F" " "/$1/{ print \$1 } "}
-function pipu  { command `for module in $(pip list --outdated | awk '{print $1}'); do pip install -U $module --allow-external $module; done` }
+function pipu  { command `for module in $(pip list --outdated --format=freeze | awk -F= '{print $1}'); do pip install -U $module $module; done` }
+#function rust-musl-builder { command docker run --rm -t -v "$(pwd)":/volume clux/muslrust:nightly }
+#function rust-musl-builder { command docker run --rm -it -v "$(pwd)":/home/rust/src ekidd/rust-musl-builder:nightly }
 function shrug { command echo -n "¯\_(ツ)_/¯"| (pbcopy);echo "¯\_(ツ)_/¯ copied to your clipboard"; }
+function disapprove { command echo -n "ಠ_ಠ"| (pbcopy);echo "ಠ_ಠ copied to your clipboard"; }
+function koala { command echo -n "ʕ •ᴥ•ʔ"| (pbcopy);echo "ʕ •ᴥ•ʔ copied to your clipboard"; }
+function flush { command echo -n "(งツ)ว"| (pbcopy);echo "(งツ)ว copied to your clipboard"; }
+function tableflip { command echo -n "(╯°□°）╯︵ ┻━┻" | (pbcopy);echo "(╯°□°）╯︵ ┻━┻ copied to your clipboard"; }
+function yeeaaahh { command echo -n "( •_•)
+( •_•)>⌐■-■
+(⌐■_■)" | (pbcopy);echo "copied aw yeah to your clippboard"; }
 ### general ###
 
 ### osx ###
 function osx-updatedb { command sudo -u $USER /usr/libexec/locate.updatedb }
 #function osx-fixperm { command sudo find ~ $TMPDIR.. -exec chflags -h nouchg,nouappnd,noschg,nosappnd {} + -exec chown -h $UID {} + -exec chmod +rw {} + -exec chmod -h -N {} + -type d -exec chmod -h +x {} + 2>&- }
+function os-fixappstore { command sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL }
 ### osx ###
