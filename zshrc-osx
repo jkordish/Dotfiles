@@ -10,13 +10,13 @@ zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' substitute 1
 zstyle :compinstall filename /home/$(echo -n $USER)/.zshrc
 
+fpath=(~/.zfunc /usr/local/share/zsh-completions /usr/local/share/zsh/site-functions /usr/share/zsh/5.2/functions $fpath)
+
 autoload -Uz +X compinit promptinit colors
 compinit
 promptinit
 colors
 # End of lines added by compinstall
-
-fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions /usr/share/zsh/5.0.8/functions $fpath)
 
 # ignore dupes in history
 setopt HIST_IGNORE_DUPS
@@ -37,4 +37,9 @@ bindkey -e
 alias ls='ls -F'
 
 # had the following in zshenv but it needs to run after compinit
-[[ -s "/usr/local/bin/aws_zsh_completer.sh" ]] && source /usr/local/bin/aws_zsh_completer.sh
+#[[ -s "/usr/local/bin/aws_zsh_completer.sh" ]] && source /usr/local/bin/aws_zsh_completer.sh
+[[ -s "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(thefuck --alias)"
+
+# added by travis gem
+[ -f /Users/jkordish/.travis/travis.sh ] && source /Users/jkordish/.travis/travis.sh
